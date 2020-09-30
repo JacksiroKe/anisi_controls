@@ -1,6 +1,6 @@
 name: anisi_controls
 description: A couple of my own custom made controls you may find useful to your flutter project like Anisi Bottom Navigation (Fancy Bottom Navigation)
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/jacksiroke/anisi_controls
 
 environment:

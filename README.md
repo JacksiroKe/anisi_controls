@@ -1,10 +1,8 @@
-# Anisi COntrols
+# Anisi Controls
 
-![Fancy Gif](https://github.com/tunitowen/fancy_bottom_navigation/blob/master/fancy_gif.gif "Fancy Gif")
+![Fancy Gif](https://github.com/JacksiroKe/anisi_controls/blob/master/anisi.gif "Anisi Gif")
 
 ## Getting Started
-
-Add the plugin (pub coming soon):
 
 ```yaml
 dependencies:

@@ -39,13 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: _getPage(currentPage),
         ),
       ),
-      bottomNavigationBar: FancyBottomNavigation(
+      bottomNavigationBar: AnisiBottomNavigation(
         tabs: [
           TabData(
               iconData: Icons.home,
               title: "Home",
               onclick: () {
-                final FancyBottomNavigationState fState =
+                final AnisiBottomNavigationState fState =
                     bottomNavigationKey.currentState;
                 fState.setPage(2);
               }),
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               color: Theme.of(context).accentColor,
               onPressed: () {
-                final FancyBottomNavigationState fState =
+                final AnisiBottomNavigationState fState =
                     bottomNavigationKey.currentState;
                 fState.setPage(2);
               },

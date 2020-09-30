@@ -159,7 +159,7 @@ class AnisiBottomNavigationState extends State<AnisiBottomNavigation>
   @override
   Widget build(BuildContext context) {
     return Stack(
-      overflow: Overflow.visible,
+      //overflow: Overflow.visible,
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         Container(
