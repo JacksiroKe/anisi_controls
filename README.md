@@ -7,7 +7,7 @@
 ```yaml
 dependencies:
   ...
-  anisi_controls: ^0.0.2
+  anisi_controls: ^0.0.3
 ```
 
 # Anisi Bottom Navigation
