@@ -9,8 +9,8 @@ dependencies:
 ```
 <table>
 <tr>
-<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/Screenshot1.jpg" width="250px" /></td>
-<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/Screenshot2.jpg" width="250px" /></td>
+<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot1.jpg" width="250px" /></td>
+<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot2.jpg" width="250px" /></td>
 </tr>
 </table>
 
