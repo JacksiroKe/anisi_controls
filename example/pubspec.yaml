@@ -1,24 +1,21 @@
-name: example
-description: A new Flutter application.
-
-version: 1.0.0+1
+name: anisi_controls_example
+description: Demonstrates how to use the anisi_controls plugin.
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
+  percent_indicator: ^2.1.9
   anisi_controls:
     path: ../
-
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
-

@@ -1,5 +1,5 @@
-import 'package:example/second_page.dart';
-import 'package:anisi_controls/anisi_bottom_navigation.dart';
+import 'package:anisi_controls_example/second_page.dart';
+import 'package:anisi_controls/as_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Anisi Controls Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -31,32 +31,31 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fancy Bottom Navigation"),
+        title: Text("Anisi Controls Demo"),
       ),
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(color: Colors.white),
         child: Center(
           child: _getPage(currentPage),
         ),
       ),
-      bottomNavigationBar: AnisiBottomNavigation(
-        tabs: [
-          TabData(
-              iconData: Icons.home,
-              title: "Home",
-              onclick: () {
-                final AnisiBottomNavigationState fState =
-                    bottomNavigationKey.currentState;
-                fState.setPage(2);
-              }),
-          TabData(
-              iconData: Icons.search,
-              title: "Search",
-              onclick: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => SecondPage()))),
-          TabData(iconData: Icons.shopping_cart, title: "Basket")
-        ],
+      bottomNavigationBar: AsBottomNavigation(
+        barHeight: 85,
+        arcHeight: 50,
+        arcWidth: 75,
+        circleHeight: 50,
         initialSelection: 1,
+        tabs: [
+          TabData(iconData: Icons.home,
+          title: "Home",
+          onclick: () {
+            final AsBottomNavigationState fState = bottomNavigationKey.currentState;
+            fState.setPage(2);
+          }),
+          TabData(iconData: Icons.search, title: "Search", onclick: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPage()))),
+          TabData(iconData: Icons.shopping_cart, title: "Shop")
+        ],
         key: bottomNavigationKey,
         onTabChangedListener: (position) {
           setState(() {
@@ -64,12 +63,54 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[Text("Hello"), Text("World")],
-        ),
-      ),
+      drawer: myDrawer(),
     );
+
+  }
+
+  Widget myDrawer() {
+    return Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text('Anisi Demo v0.0.1'),
+              accountEmail: Text("Simplicity at its best"),
+              currentAccountPicture: CircleAvatar(
+                child: FlutterLogo(
+                  size: 100,
+                  style: FlutterLogoStyle.horizontal,
+                ),
+                backgroundColor: Colors.white,
+              ),            
+            ),
+            ListTile(
+              leading: Icon(Icons.card_membership),
+              title: Text('Support us'),
+            ),
+            Divider(),
+            ListTile( 
+              leading: Icon(Icons.settings),
+              title: Text('Settings'), 
+            ),
+            Divider(),
+            ListTile( 
+              leading: Icon(Icons.update),
+              title: Text('Check Updates') 
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.help_center),
+              title: Text('Help & Feedback'),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About Anisi Controls'),
+            ),
+            Divider(),
+          ],
+        ),
+      );
   }
 
   _getPage(int page) {
@@ -81,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("This is the home page"),
             RaisedButton(
               child: Text(
-                "Start new page",
+                "Widgets Example Demo",
                 style: TextStyle(color: Colors.white),
               ),
               color: Theme.of(context).primaryColor,
@@ -97,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               color: Theme.of(context).accentColor,
               onPressed: () {
-                final AnisiBottomNavigationState fState =
+                final AsBottomNavigationState fState =
                     bottomNavigationKey.currentState;
                 fState.setPage(2);
               },

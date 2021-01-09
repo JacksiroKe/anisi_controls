@@ -1,22 +1,26 @@
 # Anisi Controls
 
-![Fancy Gif](https://github.com/JacksiroKe/anisi_controls/blob/master/anisi.gif "Anisi Gif")
-
 ## Getting Started
 
 ```yaml
 dependencies:
   ...
-  anisi_controls: ^0.0.3
+  anisi_controls: ^0.0.4
 ```
+<table>
+<tr>
+<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/Screenshot1.jpg" width="250px" /></td>
+<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/Screenshot2.jpg" width="250px" /></td>
+</tr>
+</table>
 
-# Anisi Bottom Navigation
+# AsBottomNavigation
 
 ## Basic Usage
 
 Adding the widget
 ```dart
-bottomNavigationBar: AnisiBottomNavigation(
+bottomNavigationBar: AsBottomNavigation(
     barHeight: 55,
     arcHeight: 50,
     arcWidth: 75,
@@ -25,7 +29,7 @@ bottomNavigationBar: AnisiBottomNavigation(
     tabs: [
         TabData(iconData: Icons.home, title: "Home"),
         TabData(iconData: Icons.search, title: "Search"),
-        TabData(iconData: Icons.shopping_cart, title: "Basket")
+        TabData(iconData: Icons.shopping_cart, title: "Cart")
     ],
     onTabChangedListener: (position) {
         setState(() {
