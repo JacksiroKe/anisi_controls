@@ -68,6 +68,10 @@ class AsInformer extends StatefulWidget {
       borderRadius: borderRadius,
     );
   }
+  
+  void modify(int type, String text, Color color, Color backgroundColor, Color containerColor, double borderRadius) {    
+    widgetState.modifyWidget(type, text, color, backgroundColor, containerColor, borderRadius);
+  }
 }
 
 class AsInformerState extends State<AsInformer> {
@@ -153,10 +157,20 @@ class AsInformerState extends State<AsInformer> {
     });
   }
 
-  void changeTextOnWidget(String title) {
+  void changeTextOnWidget(String text) {
     setState(() {
-      _opacity = true;
-      text = title;
+      text = text;
+    });
+  }
+
+  void modifyWidget(int type, String text, Color color, Color backgroundColor, Color containerColor, double borderRadius) {
+    setState(() {
+      type = type;
+      text = text;
+      color = color;
+      backgroundColor = backgroundColor;
+      containerColor = containerColor;
+      borderRadius = borderRadius;
     });
   }
 }

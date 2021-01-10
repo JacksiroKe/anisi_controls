@@ -7,7 +7,7 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  AsTextView textView = AsTextView.setUp("TextView that can state", 25, true);
+  AsTextView textView = AsTextView.setUp("TextView that can state", 25, true, Colors.blue, Colors.grey);
   AsLineProgress lineProgress = AsLineProgress.setUp(63, Colors.black, Colors.blue[900], Colors.blue);
   AsInformer progress = AsInformer.setUp(1, "This is a Progress Informer widget", Colors.blue, Colors.white, Colors.transparent, 10);
   AsInformer success = AsInformer.setUp(2, "This is a Success Informer widget", Colors.green, Colors.white, Colors.transparent, 10);

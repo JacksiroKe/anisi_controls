@@ -5,7 +5,7 @@
 ```yaml
 dependencies:
   ...
-  anisi_controls: ^0.0.4
+  anisi_controls: ^0.0.5
 ```
 <table>
 <tr>

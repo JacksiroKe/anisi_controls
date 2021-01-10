@@ -27,6 +27,10 @@ class AsLoader extends StatefulWidget {
   static Widget setUp( Color color ) {
     return AsLoader( color: color );
   }
+
+  void modify(Color color) {    
+    widgetState.modifyWidget(color);
+  }
 }
 
 class AsLoaderState extends State<AsLoader> {
@@ -75,6 +79,12 @@ class AsLoaderState extends State<AsLoader> {
   void showWidget() {
     setState(() {
       _opacity = true;
+    });
+  }
+
+  void modifyWidget(Color color) {
+    setState(() {
+      color = color;
     });
   }
 

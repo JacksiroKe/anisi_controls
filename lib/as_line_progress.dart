@@ -43,6 +43,10 @@ class AsLineProgress extends StatefulWidget {
       backgroundColor: backgroundColor,
     );
   }
+  
+  void modify(Color borderColor, Color progressColor, Color backgroundColor) {    
+    widgetState.modifyWidget(borderColor, progressColor, backgroundColor);
+  }
 }
 
 class AsLineProgressState extends State<AsLineProgress> {
@@ -85,6 +89,14 @@ class AsLineProgressState extends State<AsLineProgress> {
   /// change progress 
   void setNewProgress(int newProgress) {
     setState(() { progress = newProgress; });
+  }
+
+  void modifyWidget(Color borderColor, Color progressColor, Color backgroundColor) {
+    setState(() {
+      borderColor = borderColor;
+      progressColor = progressColor;
+      backgroundColor = backgroundColor;
+    });
   }
 
 }
