@@ -64,8 +64,9 @@ class AsLineProgressState extends State<AsLineProgress> {
   Widget build(BuildContext context) {
     return Container(
       decoration: new BoxDecoration( 
-        color: Colors.blue,
+        color: backgroundColor,
         border: Border.all(color: borderColor),
+        boxShadow: [BoxShadow(blurRadius: 3)],
         borderRadius: BorderRadius.all(Radius.circular(25)),
       ),
       child: Stack(
