@@ -1,6 +1,9 @@
 # 0.0.5 - Added more methods
 * improved the method: modify to manage AsInformer, AsLineprogress, AsLoader, AsTextView
 
+# 0.0.6 - Added more methods
+* improved the method: modify to manage AsInformer, AsLineprogress, AsLoader, AsTextView
+
 # 0.0.4 - More Widgets
 * renamed AnisiBottomNavigation to AsBottomNavigation
 * Added four more widgets: AsLineProgress, AsLoader, AsProgress and AsTextView

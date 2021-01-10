@@ -28,13 +28,10 @@ class AsLineProgress extends StatefulWidget {
   );
 
   @override
-  createState() => widgetState = new AsLineProgressState( progress: this.progress, borderColor: this.borderColor, progressColor: this.progressColor,  backgroundColor: this.backgroundColor);
+  createState() => widgetState = new AsLineProgressState( progress: this.progress, borderColor: this.borderColor, 
+    progressColor: this.progressColor,  backgroundColor: this.backgroundColor);
 
-  /// change progress with a new value
-  void setProgress(int newProgress) {
-    widgetState.setNewProgress(newProgress);
-  }
-
+  /// initial setting up of the widget
   static Widget setUp(int progress, Color borderColor, Color progressColor, Color backgroundColor) {
     return new AsLineProgress(
       progress: progress,
@@ -44,6 +41,12 @@ class AsLineProgress extends StatefulWidget {
     );
   }
   
+  /// change progress with a new value
+  void setProgress(int newProgress) {
+    widgetState.setNewProgress(newProgress);
+  }
+
+  /// change the outlook of the widgeton the fly
   void modify(Color borderColor, Color progressColor, Color backgroundColor) {    
     widgetState.modifyWidget(borderColor, progressColor, backgroundColor);
   }

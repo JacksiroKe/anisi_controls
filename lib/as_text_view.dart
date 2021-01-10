@@ -21,28 +21,37 @@ class AsTextView extends StatefulWidget {
   );
 
   @override
-  createState() => widgetState = new AsTextViewState( text: this.text, fsize: this.fsize, isbold: this.isbold, color: this.color );
+  createState() => widgetState = new AsTextViewState( 
+    text: this.text,
+    fsize: this.fsize,
+    isbold: this.isbold,
+    color: this.color 
+  );
 
+  /// initial setting up of the widget
+  static Widget setUp(String setText, double setSize, bool setWeight, Color setColor, Color setBackgroundColor) {
+    return new AsTextView(
+      text: setText,
+      fsize: setSize,
+      isbold: setWeight,  
+      color: setColor,
+      backgroundColor: setBackgroundColor,
+    );
+  }
+  
+  /// change the text of the widgeton the fly
   void setText(String newtext) {
     widgetState.setNewText(newtext);
   }
 
+  /// change the font size of the widgeton the fly
   void setSize(double newfontsize) {
     widgetState.setNewFontSize(newfontsize);
   }
 
-  static Widget setUp(String defaultText, double textFontsize, bool isTextbold, Color color, Color backgroundColor) {
-    return new AsTextView(
-      text: defaultText,
-      fsize: textFontsize,
-      isbold: isTextbold,  
-      color: color,
-      backgroundColor: backgroundColor,
-    );
-  }
-  
-  void modify(String defaultText, double textFontsize, bool isTextbold, Color color, Color backgroundColor) {    
-    widgetState.modifyWidget(defaultText, textFontsize, isTextbold, color, backgroundColor);
+  /// change the outlook of the widgeton the fly
+  void modify(String newText, double newSize, bool newWeight, Color newColor, Color newBackgroundColor) {    
+    widgetState.modifyWidget(newText, newSize, newWeight, newColor, newBackgroundColor);
   }
 }
 
@@ -71,13 +80,13 @@ class AsTextViewState extends State<AsTextView> {
     setState(() { fsize = newFontsize; });
   }
 
-  void modifyWidget(String defaultText, double textFontsize, bool isTextbold, Color color, Color backgroundColor) {
+  void modifyWidget(String setText, double setSize, bool setWeight, Color setColor, Color setBackgroundColor) {
     setState(() {
-      defaultText = defaultText;
-      textFontsize = textFontsize;
-      isTextbold = isTextbold;
-      color = color;
-      backgroundColor = backgroundColor;
+      text = setText;
+      fsize = setSize;
+      isbold = setWeight;
+      color = setColor;
+      backgroundColor = setBackgroundColor;
     });
   }
 

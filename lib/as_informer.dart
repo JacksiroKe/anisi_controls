@@ -43,6 +43,18 @@ class AsInformer extends StatefulWidget {
       backgroundColor: this.backgroundColor,
       borderRadius: this.borderRadius);
 
+  /// initial setting up of the widget
+  static Widget setUp(int setType, String setText, Color setColor, Color setContainerColor, Color setBackgroundColor, double setBorderRadius) {
+    return AsInformer(
+      type: setType,
+      text: setText,
+      color: setColor,
+      containerColor: setContainerColor,
+      backgroundColor: setBackgroundColor,
+      borderRadius: setBorderRadius,
+    );
+  }
+  
   /// hide the widget is its already being shown
   void hideWidget() {
     widgetState.hideWidget();
@@ -53,24 +65,14 @@ class AsInformer extends StatefulWidget {
     widgetState.showWidget();
   }
 
-  /// change text on the widget
-  void changeWidgetText(String title) {
-    widgetState.changeTextOnWidget(title);
+  /// change text on the widget  
+  void setText(String newtext) {
+    widgetState.setNewText(newtext);
   }
 
-  static Widget setUp(int type, String text, Color color, Color backgroundColor, Color containerColor, double borderRadius) {
-    return AsInformer(
-      type: type,
-      text: text,
-      color: color,
-      containerColor: containerColor,
-      backgroundColor: backgroundColor,
-      borderRadius: borderRadius,
-    );
-  }
-  
-  void modify(int type, String text, Color color, Color backgroundColor, Color containerColor, double borderRadius) {    
-    widgetState.modifyWidget(type, text, color, backgroundColor, containerColor, borderRadius);
+  /// change the outlook of the widgeton the fly
+  void modify(int newType, String newText, Color newColor, Color newBackgroundColor, Color newContainerColor, double newBorderRadius) {    
+    widgetState.modifyWidget(newType, newText, newColor, newBackgroundColor, newContainerColor, newBorderRadius);
   }
 }
 
@@ -157,20 +159,18 @@ class AsInformerState extends State<AsInformer> {
     });
   }
 
-  void changeTextOnWidget(String text) {
-    setState(() {
-      text = text;
-    });
+  void setNewText(String newText) {
+    setState(() { text = newText; });
   }
-
-  void modifyWidget(int type, String text, Color color, Color backgroundColor, Color containerColor, double borderRadius) {
+  
+  void modifyWidget(int newType, String newText, Color newColor, Color newBackgroundColor, Color newContainerColor, double newBorderRadius) {
     setState(() {
-      type = type;
-      text = text;
-      color = color;
-      backgroundColor = backgroundColor;
-      containerColor = containerColor;
-      borderRadius = borderRadius;
+      type = newType;
+      text = newText;
+      color = newColor;
+      backgroundColor = newBackgroundColor;
+      containerColor = newContainerColor;
+      borderRadius = newBorderRadius;
     });
   }
 }

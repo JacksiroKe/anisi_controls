@@ -14,6 +14,11 @@ class AsLoader extends StatefulWidget {
   @override
   createState() => widgetState = AsLoaderState( color: this.color );
 
+  /// initial setting up of the widget
+  static Widget setUp( Color setColor ) {
+    return AsLoader( color: setColor );
+  }
+
   /// hide the widget is its already being shown
   void hideWidget() {
     widgetState.hideWidget();
@@ -24,12 +29,9 @@ class AsLoader extends StatefulWidget {
     widgetState.showWidget();
   }
 
-  static Widget setUp( Color color ) {
-    return AsLoader( color: color );
-  }
-
-  void modify(Color color) {    
-    widgetState.modifyWidget(color);
+  /// change the outlook of the widgeton the fly
+  void modify(Color newColor) {    
+    widgetState.modifyWidget(newColor);
   }
 }
 
@@ -82,9 +84,9 @@ class AsLoaderState extends State<AsLoader> {
     });
   }
 
-  void modifyWidget(Color color) {
+  void modifyWidget(Color newColor) {
     setState(() {
-      color = color;
+      color = newColor;
     });
   }
 

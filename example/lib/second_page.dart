@@ -47,11 +47,29 @@ class _SecondPageState extends State<SecondPage> {
                 padding: const EdgeInsets.all(5),
                 child: lineProgress,
               ),
-              loader
+              loader,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: FloatingActionButton.extended(
+                  heroTag: "reload",
+                  icon: Icon(Icons.refresh, color: Colors.white),
+                  label: Text("Reload", style: TextStyle(color: Colors.white)),
+                  onPressed: () {
+                    refreshView();
+                  },
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
+  void refreshView()
+  {
+    textView.setText("View Refreshed!");
+    failure.modify(1, "Informer changed", Colors.green, Colors.white, Colors.transparent, 10);
+  }
+  
 }
