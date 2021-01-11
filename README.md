@@ -2,81 +2,23 @@
 
 ## Getting Started
 
-```yaml
-dependencies:
-  ...
-  anisi_controls: ^0.0.5
-```
-<table>
-<tr>
-<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot1.jpg" width="250px" /></td>
-<td><img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot2.jpg" width="250px" /></td>
-</tr>
-</table>
+<img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot2.jpg" width="250px" />
 
-# AsBottomNavigation
+Widgets Inside:
+* AsTextView
+* AsLineProgress
+* AsInformer
+* AsLoader
 
 ## Basic Usage
 
-Adding the widget
+Adding the widgets
 ```dart
-bottomNavigationBar: AsBottomNavigation(
-    barHeight: 55,
-    arcHeight: 50,
-    arcWidth: 75,
-    circleHeight: 50,
-    initialSelection: 1,
-    tabs: [
-        TabData(iconData: Icons.home, title: "Home"),
-        TabData(iconData: Icons.search, title: "Search"),
-        TabData(iconData: Icons.shopping_cart, title: "Cart")
-    ],
-    onTabChangedListener: (position) {
-        setState(() {
-        _currentIndex = position;
-        });
-    },
-    ),
+    AsTextView textView = AsTextView.setUp("TextView that can state", 25, true, Colors.blue, Colors.grey);
+    AsLineProgress lineProgress = AsLineProgress.setUp(63, Colors.black, Colors.blue[900], Colors.blue);
+    AsInformer progress = AsInformer.setUp(1, "This is a Progress Informer widget", Colors.blue, Colors.transparent, Colors.white, 10);
+    AsInformer success = AsInformer.setUp(2, "This is a Success Informer widget", Colors.green, Colors.transparent, Colors.white, 10);
+    AsInformer failure = AsInformer.setUp(3, "This is a Failure Informer widget", Colors.red, Colors.transparent, Colors.white, 10);
+    AsLoader loader = AsLoader.setUp(Colors.blue);
+  
 ```
-
-## TabData
-**iconData** -> Icon to be used for the tab<br/>
-**title** -> String to be used for the tab<br/>
-**onClick** -> Optional function to be used when the circle itself is clicked, on an active tab
-
-## Attributes
-### required
-**tabs** -> List of `TabData` objects<br/>
-**onTabChangedListener** -> Function to handle a tap on a tab, receives `int position`
-
-### optional
-**initialSelection** -> Defaults to 0<br/>
-**circleColor** -> Defaults to null, derives from `Theme`<br/>
-**activeIconColor** -> Defaults to null, derives from `Theme`<br/>
-**inactiveIconColor** -> Defaults to null, derives from `Theme`<br/>
-**taxtColor** -> Defaults to null, derives from `Theme`<br/>
-**barBackgroundColor** -> Defaults to null, derives from `Theme`<br/>
-**key** -> Defaults to null<br/>
-
-## Theming
-
-The bar will attempt to use your current theme out of the box, however you may want to theme it. Here are the attributes:
-
-
-## Programmatic Selection
-
-To select a tab programmatically you will need to assign a GlobalKey to the widget. When you want to change tabs you will need to access the State using this key, and then call `setPage(position)`.<br/>
-See example project, main.dart, line 75 for an example.
-
-## Showcase
-Using this package in a live app, let me know and I'll add you app here.
-
-
-## Inspiration
-
-This package was inspired by a design on dribbble by Manoj Rajput:<br/>
-https://dribbble.com/shots/5419022-Tab
-
-## Contributing
-
-Contributions are welcome, please submit a PR :)

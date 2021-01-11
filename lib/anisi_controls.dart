@@ -1,7 +1,6 @@
 /// anisi_controls created by Jacksiroke
 /// Github : https://github.com/jacksiroke/anisi_controls
 
-export 'package:anisi_controls/as_bottom_navigation.dart';
 export 'package:anisi_controls/as_line_progress.dart';
 export 'package:anisi_controls/as_loader.dart';
 export 'package:anisi_controls/as_informer.dart';
