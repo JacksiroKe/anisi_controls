@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class AsLoader extends StatefulWidget {
 
   /// General Color of the widget
-  Color color;
-  AsLoaderState widgetState;
+  Color? color;
+  late AsLoaderState widgetState;
 
   AsLoader(
     { this.color }
@@ -36,7 +36,7 @@ class AsLoader extends StatefulWidget {
 }
 
 class AsLoaderState extends State<AsLoader> {
-  Color color;
+  Color? color;
 
   bool _opacity = false;
 
@@ -52,7 +52,7 @@ class AsLoaderState extends State<AsLoader> {
         child: Container(
           decoration: new BoxDecoration( 
             color: Colors.white,
-            border: Border.all(color: color),
+            border: Border.all(color: color!),
             boxShadow: [BoxShadow(blurRadius: 5)],
             borderRadius: BorderRadius.all(Radius.circular(30)),
           ),

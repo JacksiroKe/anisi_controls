@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 /// Stateful TextView control
 class AsTextView extends StatefulWidget {
-  String text;
-  double fsize;
-  bool isbold;
-  Color color;
-  Color backgroundColor;
+  String? text;
+  double? fsize;
+  bool? isbold;
+  Color? color;
+  Color? backgroundColor;
 
-  AsTextViewState widgetState;
+  late AsTextViewState widgetState;
 
   AsTextView(
     {
@@ -56,19 +56,19 @@ class AsTextView extends StatefulWidget {
 }
 
 class AsTextViewState extends State<AsTextView> {
-  String text;
-  double fsize;
-  bool isbold;
-  Color color;
-  Color backgroundColor;
+  String? text;
+  double? fsize;
+  bool? isbold;
+  Color? color;
+  Color? backgroundColor;
 
   AsTextViewState( { this.text, this.fsize, this.isbold, this.color, this.backgroundColor } );
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
-      style: TextStyle(fontWeight: isbold ? FontWeight.bold : FontWeight.normal, fontSize: fsize, color: color, backgroundColor: backgroundColor),
+      text!,
+      style: TextStyle(fontWeight: isbold! ? FontWeight.bold : FontWeight.normal, fontSize: fsize, color: color, backgroundColor: backgroundColor),
     );
   }
 

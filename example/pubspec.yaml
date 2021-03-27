@@ -8,7 +8,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  percent_indicator: ^2.1.9
   anisi_controls:
     path: ../
   cupertino_icons: ^1.0.0

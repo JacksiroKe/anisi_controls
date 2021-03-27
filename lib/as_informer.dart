@@ -4,24 +4,24 @@ import 'package:flutter/material.dart';
 class AsInformer extends StatefulWidget {
 
   /// Type of informer to display: 1 for progress, 2 for success, 3 for failure
-  int type;
+  int? type;
   
   /// Text to show in the informer
-  String text;
+  String? text;
   
   /// General Color of the widget
-  Color color;
+  Color? color;
 
   /// Container Color of the widget
-  Color containerColor;
+  Color? containerColor;
   
   /// Background Color of the widget
-  Color backgroundColor;
+  Color? backgroundColor;
   
   /// Radius of the border around the widget
-  double borderRadius;
+  double? borderRadius;
 
-  AsInformerState widgetState;
+  late AsInformerState widgetState;
 
   AsInformer(
     {
@@ -77,12 +77,12 @@ class AsInformer extends StatefulWidget {
 }
 
 class AsInformerState extends State<AsInformer> {
-  int type;
-  String text;
-  Color color;
-  Color backgroundColor;
-  Color containerColor;
-  double borderRadius;
+  int? type;
+  String? text;
+  Color? color;
+  Color? backgroundColor;
+  Color? containerColor;
+  double? borderRadius;
   bool _opacity = false;
 
   AsInformerState(    
@@ -104,9 +104,9 @@ class AsInformerState extends State<AsInformer> {
         child: Container(
           decoration: new BoxDecoration( 
             color: backgroundColor,
-            border: Border.all(color: color),
+            border: Border.all(color: color!),
             boxShadow: [BoxShadow(blurRadius: 5)],
-            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius!)),
           ),
           margin: const EdgeInsets.all(20),
           child: Padding(
@@ -127,14 +127,14 @@ class AsInformerState extends State<AsInformer> {
         children: [
           Padding(
                 padding: const EdgeInsets.all(10),
-                child: type > 1 ? 
+                child: type! > 1 ? 
                 Icon(type == 2 ? Icons.thumb_up : Icons.warning, color: color, size: 50)
                : _getCircularProgress(),
           ),              
           Container(
             width: MediaQuery.of(context).size.width - 150,
             child: Text(
-              text, style: TextStyle(color: color, fontSize: 18), softWrap: true,
+              text!, style: TextStyle(color: color, fontSize: 18), softWrap: true,
             ),
           )
         ],

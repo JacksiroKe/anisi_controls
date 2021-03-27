@@ -5,18 +5,18 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 class AsLineProgress extends StatefulWidget {
 
   /// progress value of the linear percentindicator
-  int progress;
+  int? progress;
 
   /// Color of the border for the widget
-  Color borderColor;
+  Color? borderColor;
 
   /// Progress Color of the indicator
-  Color progressColor;
+  Color? progressColor;
 
   /// Background Color for the widget  
-  Color backgroundColor;
+  Color? backgroundColor;
 
-  AsLineProgressState widgetState;
+  late AsLineProgressState widgetState;
 
   AsLineProgress(
     {
@@ -53,10 +53,10 @@ class AsLineProgress extends StatefulWidget {
 }
 
 class AsLineProgressState extends State<AsLineProgress> {
-  int progress;
-  Color borderColor;
-  Color progressColor;
-  Color backgroundColor;
+  int? progress;
+  Color? borderColor;
+  Color? progressColor;
+  Color? backgroundColor;
 
   AsLineProgressState( { this.progress, this.borderColor, this.progressColor,  this.backgroundColor } );
 
@@ -65,16 +65,16 @@ class AsLineProgressState extends State<AsLineProgress> {
     return Container(
       decoration: new BoxDecoration( 
         color: backgroundColor,
-        border: Border.all(color: borderColor),
+        border: Border.all(color: borderColor!),
         boxShadow: [BoxShadow(blurRadius: 3)],
         borderRadius: BorderRadius.all(Radius.circular(25)),
       ),
       child: Stack(
         children: <Widget>[
           LinearPercentIndicator(
-            percent: double.parse((progress / 100).toStringAsFixed(1)),
+            percent: double.parse((progress! / 100).toStringAsFixed(1)),
             lineHeight: 35,
-            backgroundColor: backgroundColor,
+            backgroundColor: backgroundColor!,
             progressColor: progressColor,
             linearStrokeCap: LinearStrokeCap.round,
             padding: const EdgeInsets.only(left: 18, right: 18),
