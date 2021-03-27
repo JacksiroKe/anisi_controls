@@ -1,3 +1,6 @@
+# 0.0.9 - Shifting to Null Safety
+* Shifting to Null Safety
+
 # 0.0.8 - AnisiBottomNavigation is deprecated
 * AnisiBottomNavigation removed
 
