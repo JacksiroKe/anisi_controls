@@ -5,6 +5,7 @@ export 'package:anisi_controls/as_line_progress.dart';
 export 'package:anisi_controls/as_loader.dart';
 export 'package:anisi_controls/as_informer.dart';
 export 'package:anisi_controls/as_text_view.dart';
+export 'package:anisi_controls/bubble_bottom_bar.dart';
 export 'package:anisi_controls/alerts/alert.dart';
 export 'package:anisi_controls/alerts/alert_button.dart';
 export 'package:anisi_controls/alerts/alert_style.dart';
