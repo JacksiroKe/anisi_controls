@@ -10,7 +10,7 @@ class AnimatedFloatingActionButton extends StatefulWidget {
   final AnimatedIconData? animatedIconData;
 
   AnimatedFloatingActionButton({
-    required Key key,
+    Key? key,
     this.fabButtons,
     this.colorStartAnimation,
     this.colorEndAnimation,
