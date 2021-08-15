@@ -56,13 +56,13 @@ class AsInformer extends StatefulWidget {
   }
   
   /// hide the widget is its already being shown
-  void hideWidget() {
-    widgetState.hideWidget();
+  void hide() {
+    widgetState.hide();
   }
 
   /// show the widget is its already hidden, has to be called if the widget has been created freshly
-  void showWidget() {
-    widgetState.showWidget();
+  void show() {
+    widgetState.show();
   }
 
   /// change text on the widget  
@@ -72,7 +72,7 @@ class AsInformer extends StatefulWidget {
 
   /// change the outlook of the widgeton the fly
   void modify(int newType, String newText, Color newColor, Color newBackgroundColor, Color newContainerColor, double newBorderRadius) {    
-    widgetState.modifyWidget(newType, newText, newColor, newBackgroundColor, newContainerColor, newBorderRadius);
+    widgetState.modify(newType, newText, newColor, newBackgroundColor, newContainerColor, newBorderRadius);
   }
 }
 
@@ -147,13 +147,13 @@ class AsInformerState extends State<AsInformer> {
         valueColor: AlwaysStoppedAnimation(color));
   }
 
-  void hideWidget() {
+  void hide() {
     setState(() {
       _opacity = false;
     });
   }
 
-  void showWidget() {
+  void show() {
     setState(() {
       _opacity = true;
     });
@@ -163,7 +163,7 @@ class AsInformerState extends State<AsInformer> {
     setState(() { text = newText; });
   }
   
-  void modifyWidget(int newType, String newText, Color newColor, Color newBackgroundColor, Color newContainerColor, double newBorderRadius) {
+  void modify(int newType, String newText, Color newColor, Color newBackgroundColor, Color newContainerColor, double newBorderRadius) {
     setState(() {
       type = newType;
       text = newText;

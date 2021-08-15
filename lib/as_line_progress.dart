@@ -3,9 +3,8 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 /// A custom line progress indicator widget with percentage
 class AsLineProgress extends StatefulWidget {
-
   /// progress value of the linear percentindicator
-  int? progress;
+  final int progress;
 
   /// Color of the border for the widget
   Color? borderColor;
@@ -13,26 +12,30 @@ class AsLineProgress extends StatefulWidget {
   /// Progress Color of the indicator
   Color? progressColor;
 
-  /// Background Color for the widget  
+  /// Background Color for the widget
   Color? backgroundColor;
 
   late AsLineProgressState widgetState;
 
-  AsLineProgress(
-    {
-      this.progress,
-      this.borderColor,
-      this.progressColor,
-      this.backgroundColor
-    }
-  );
+  AsLineProgress({
+    Key? key,
+    this.progress = 0,
+    this.borderColor,
+    this.progressColor,
+    this.backgroundColor,
+  });
 
   @override
-  createState() => widgetState = new AsLineProgressState( progress: this.progress, borderColor: this.borderColor, 
-    progressColor: this.progressColor,  backgroundColor: this.backgroundColor);
+  createState() => widgetState = new AsLineProgressState(
+        progress: this.progress,
+        borderColor: this.borderColor,
+        progressColor: this.progressColor,
+        backgroundColor: this.backgroundColor,
+      );
 
   /// initial setting up of the widget
-  static Widget setUp(int progress, Color borderColor, Color progressColor, Color backgroundColor) {
+  static Widget setUp(int progress, Color borderColor, Color progressColor,
+      Color backgroundColor) {
     return new AsLineProgress(
       progress: progress,
       borderColor: borderColor,
@@ -40,15 +43,15 @@ class AsLineProgress extends StatefulWidget {
       backgroundColor: backgroundColor,
     );
   }
-  
+
   /// change progress with a new value
   void setProgress(int newProgress) {
     widgetState.setNewProgress(newProgress);
   }
 
   /// change the outlook of the widgeton the fly
-  void modify(Color borderColor, Color progressColor, Color backgroundColor) {    
-    widgetState.modifyWidget(borderColor, progressColor, backgroundColor);
+  void modify(Color borderColor, Color progressColor, Color backgroundColor) {
+    widgetState.modify(borderColor, progressColor, backgroundColor);
   }
 }
 
@@ -58,12 +61,17 @@ class AsLineProgressState extends State<AsLineProgress> {
   Color? progressColor;
   Color? backgroundColor;
 
-  AsLineProgressState( { this.progress, this.borderColor, this.progressColor,  this.backgroundColor } );
+  AsLineProgressState({
+    this.progress,
+    this.borderColor,
+    this.progressColor,
+    this.backgroundColor,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: new BoxDecoration( 
+      decoration: new BoxDecoration(
         color: backgroundColor,
         border: Border.all(color: borderColor!),
         boxShadow: [BoxShadow(blurRadius: 3)],
@@ -81,8 +89,14 @@ class AsLineProgressState extends State<AsLineProgress> {
           ),
           Padding(
             padding: const EdgeInsets.all(5),
-            child:Center(
-              child: Text( progress.toString() + " %", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),),
+            child: Center(
+              child: Text(
+                progress.toString() + " %",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
             ),
           ),
         ],
@@ -90,17 +104,18 @@ class AsLineProgressState extends State<AsLineProgress> {
     );
   }
 
-  /// change progress 
+  /// change progress
   void setNewProgress(int newProgress) {
-    setState(() { progress = newProgress; });
+    setState(() {
+      progress = newProgress;
+    });
   }
 
-  void modifyWidget(Color borderColor, Color progressColor, Color backgroundColor) {
+  void modify(Color borderColor, Color progressColor, Color backgroundColor) {
     setState(() {
       borderColor = borderColor;
       progressColor = progressColor;
       backgroundColor = backgroundColor;
     });
   }
-
 }

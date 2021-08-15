@@ -1,3 +1,6 @@
+# 0.1.0 - Adding more widgets and simplified methods
+* Shifting to Null Safety
+
 # 0.0.9 - Shifting to Null Safety
 * Shifting to Null Safety
 

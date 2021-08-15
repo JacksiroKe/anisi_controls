@@ -2,8 +2,6 @@
 
 ## Getting Started
 
-<img src="https://github.com/JacksiroKe/anisi_controls/blob/master/images/screenshot2.jpg" width="250px" />
-
 Widgets Inside:
 * AsTextView
 * AsLineProgress

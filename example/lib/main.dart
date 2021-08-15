@@ -1,5 +1,4 @@
-import 'package:anisi_controls_example/second_page.dart';
-import 'package:anisi_controls/as_bottom_navigation.dart';
+import 'package:anisi_controls/anisi_controls.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -37,10 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void loadWidgets(BuildContext context) {
-    progress.showWidget();
-    success.showWidget();
-    failure.showWidget();
-    loader.showWidget();
+    progress.show();
+    success.show();
+    failure.show();
+    loader.show();
   }
 
   @override

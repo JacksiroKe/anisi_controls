@@ -20,18 +20,18 @@ class AsLoader extends StatefulWidget {
   }
 
   /// hide the widget is its already being shown
-  void hideWidget() {
-    widgetState.hideWidget();
+  void hide() {
+    widgetState.hide();
   }
 
   /// show the widget is its already hidden, has to be called if the widget has been created freshly
-  void showWidget() {
-    widgetState.showWidget();
+  void show() {
+    widgetState.show();
   }
 
   /// change the outlook of the widgeton the fly
   void modify(Color newColor) {    
-    widgetState.modifyWidget(newColor);
+    widgetState.modify(newColor);
   }
 }
 
@@ -72,19 +72,19 @@ class AsLoaderState extends State<AsLoader> {
         valueColor: AlwaysStoppedAnimation(color));
   }
 
-  void hideWidget() {
+  void hide() {
     setState(() {
       _opacity = false;
     });
   }
 
-  void showWidget() {
+  void show() {
     setState(() {
       _opacity = true;
     });
   }
 
-  void modifyWidget(Color newColor) {
+  void modify(Color newColor) {
     setState(() {
       color = newColor;
     });
